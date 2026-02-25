@@ -1,7 +1,12 @@
 import argparse 
+from argparse import Namespace
 
 
-def run_cli():
+def run_cli() -> Namespace:
+    """
+    Builds and parses CLI arguments and returns the parsed Namespace.
+    """
+    print("step3: CLI")
     #Create Parser
     parser = argparse.ArgumentParser(description="Track your expenses!")
 
@@ -21,17 +26,23 @@ def run_cli():
 
     # Create arguments for the "update" subcommand
     update_parser.add_argument("--id", type=int, required=True)
+    update_parser.add_argument("--description", type=str, required=True)
+    update_parser.add_argument("--amount", type=int, required=True)
 
     # Create arguments for the "delete" subcommand
     delete_parser.add_argument("--id", type=int, required=True)
 
     # Create arguments for the "summary" subcommand
-    summary_parser.add_argument("--month", type=int)
+    summary_parser.add_argument("--month", type=int, choices=range(1,13))
 
     # Read and validate what the user wrote in the terminal
     args = parser.parse_args()
+
     
     return args 
+
+
+
    
 
 
