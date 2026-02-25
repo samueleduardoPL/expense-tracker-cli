@@ -8,7 +8,7 @@ A simple command-line expense tracker built with Python, following a layered arc
 
 This project allows users to:
 
-- Add expenses
+- Add, update, delete, list, and get a summary of expenses
 - Store data persistently in JSON files
 - Validate domain rules
 - Run automated tests
